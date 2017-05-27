@@ -197,6 +197,9 @@ extension CAPSPageMenu {
                     if self.menuItems[self.lastPageIndex].titleLabel != nil && self.menuItems[self.currentPageIndex].titleLabel != nil {
                         self.menuItems[self.lastPageIndex].titleLabel!.textColor = self.configuration.unselectedMenuItemLabelColor
                         self.menuItems[self.currentPageIndex].titleLabel!.textColor = self.configuration.selectedMenuItemLabelColor
+                        
+                        self.menuItems[self.lastPageIndex].titleLabel!.backgroundColor = self.configuration.unselectedMenuItemBackgroundColor
+                        self.menuItems[self.currentPageIndex].titleLabel?.backgroundColor = self.configuration.selectedMenuItemBackgroundColor
                     }
                 }
             })
