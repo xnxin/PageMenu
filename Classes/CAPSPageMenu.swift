@@ -238,6 +238,16 @@ extension CAPSPageMenu {
     // MARK: - Orientation Change
     
     override open func viewDidLayoutSubviews() {
+        
+        ///FIXME: setup frame 
+        
+        let frame = CGRect(x: 0, y: configuration.menuHeight, width: self.view.frame.width, height: self.view.frame.height - configuration.menuHeight)
+        let firstVC = controllerArray[0]
+        if (firstVC.view.frame != frame) {
+            firstVC.view.frame = frame
+        }
+        
+        
         // Configure controller scroll view content size
         controllerScrollView.contentSize = CGSize(width: self.view.frame.width * CGFloat(controllerArray.count), height: self.view.frame.height - configuration.menuHeight)
         
